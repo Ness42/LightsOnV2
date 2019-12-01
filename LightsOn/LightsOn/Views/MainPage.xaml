@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LightsOn.Views"
+             xmlns:localPartial="clr-namespace:LightsOn.Views.PartialViews"
+             xmlns:prism="http://prismlibrary.com"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             x:Class="LightsOn.Views.MainPage"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             Title="{Binding Title}">
+
+    <MasterDetailPage.Master>
+        <local:MasterPage x:Name="masterPage" />
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <localPartial:HomeComingPage></localPartial:HomeComingPage>
+            </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>

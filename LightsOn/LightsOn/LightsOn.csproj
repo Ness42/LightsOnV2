@@ -1,0 +1,114 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="obsolete\**" />
+    <EmbeddedResource Remove="obsolete\**" />
+    <None Remove="obsolete\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Assest\HomeComingPressed.png" />
+    <None Remove="Assest\HomeComingPressedMouseOver.png" />
+    <None Remove="Assest\HomeComingUnpressed.png" />
+    <None Remove="Assest\HomeComingUnpressedMouseOver.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assest\HomeComingUnpressed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assest\HomeComingPressed.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assest\HomeComingPressedMouseOver.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assest\HomeComingUnpressedMouseOver.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome" Version="4.7.0" />
+    <PackageReference Include="GitHub" Version="1.16.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="RestSharp" Version="106.6.10" />
+    <PackageReference Include="Xam.Plugin.Iconize.FontAwesome" Version="3.5.0.129" />
+    <PackageReference Include="Xam.Plugins.Settings" Version="3.1.1" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.3.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.991211" />
+    <PackageReference Include="Prism.Unity.Forms" Version="7.2.0.1367" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Contorls\FritzSwitchControl.xaml.cs">
+      <DependentUpon>FritzSwitchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Contorls\FritzTempControl.xaml.cs">
+      <DependentUpon>FritzTempControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Contorls\TcpLedControl.xaml.cs">
+      <DependentUpon>TcpLedControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Contorls\TcpShutterControl.xaml.cs">
+      <DependentUpon>TcpShutterControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Contorls\TcpSwitchControl.xaml.cs">
+      <DependentUpon>TcpSwitchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\PartialViews\LightsPage.xaml.cs">
+      <DependentUpon>LightsPage.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Contorls\FritzSwitchControl.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Contorls\NanoLeafControl.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Contorls\TcpSwitchControl.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Contorls\TvRemoteControl.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MasterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PartialViews\HomeComingPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PartialViews\LightsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PartialViews\RollerShutterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PartialViews\SettingsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PartialViews\TemperaturePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PartialViews\TvRemotePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

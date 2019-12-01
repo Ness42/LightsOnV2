@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="LightsOn.Views.PartialViews.LightsPage"
+             xmlns:control="clr-namespace:LightsOn.Contorls">
+    <Grid x:Name="LightsStackLayout">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <!--<control:TcpSwitchControl x:Name="FS20ButtonControl"></control:TcpSwitchControl>
+        <control:TcpLedControl></control:TcpLedControl>-->
+        <ContentView Content="{ Binding TcpLightControl}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <ContentView Content="{ Binding TcpLedControl}" Grid.Row="1" Grid.Column="0"/>
+        <ContentView Content="{Binding NanoLeafControl}" Grid.Row="1" Grid.Column="1"/>
+    </Grid>    
+  
+</ContentPage>

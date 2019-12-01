@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
+             mc:Ignorable="d"
+             x:Class="LightsOn.Contorls.TcpLedControl">
+    <ContentView.Content>
+            <Grid x:Name="GridTcp">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <!--<iconize:IconButton Text="&#xf085;" Grid.ColumnSpan="1" Grid.Column="1"></iconize:IconButton>-->
+                <!--<Button Text="&#xf085;" Grid.Column="1" FontFamily="{StaticResource FontAwesomeSolid}" FontSize="Large" Grid.ColumnSpan="1" >
+            </Button>-->
+            </Grid>
+    </ContentView.Content>
+</ContentView>
