@@ -1,5 +1,6 @@
 ﻿using LightsOn.Interfaces;
 using LightsOn.Settings;
+using LightsOn.Service;
 using LightsOnXamerin.Interfaces;
 using Prism.Commands;
 using Prism.Mvvm;
@@ -30,26 +31,27 @@ namespace LightsOn.ViewModels.PartialViewModel
 
         private ITCPClient _tcpClient;
         private INanoLeafClient _nanoLeafClient;
+        private IDimScreenService _dimScreen; 
 
-        public HomeComingPageViewModel(ITCPClient tcpClient, INanoLeafClient nanoLeafClient)
+        public HomeComingPageViewModel(ITCPClient tcpClient, INanoLeafClient nanoLeafClient,IDimScreenService dimScreen)
         //public HomeComingPageViewModel()
         {
             _tcpClient = tcpClient;
             _nanoLeafClient = nanoLeafClient;
+            _dimScreen = dimScreen;
 
             //  Create the command - calls Do...Commands.
             homeComingOnCommand = new Command(DoHomeComingOnCommand);
             homeComingOffCommand = new Command(DoHomeComingOffCommand);
+            lightUpScreenCommand = new Command(DoLightUpScreenCommand);
         }
-
-
 
         /// <summary>
         /// The command objects.
         /// </summary>
         private Command homeComingOnCommand;
         private Command homeComingOffCommand;
-
+        private Command lightUpScreenCommand;
 
 
         /// <summary>
@@ -106,6 +108,10 @@ namespace LightsOn.ViewModels.PartialViewModel
             }
         }
 
+        private void DoLightUpScreenCommand(object obj)
+        {
+            _dimScreen.ResetBrightnessOverride();
+        }
 
 
         /// <summary>
@@ -118,6 +124,11 @@ namespace LightsOn.ViewModels.PartialViewModel
         public Command HomeComingOnCommand
         {
             get { return homeComingOnCommand; }
+        }
+
+        public Command LightUpScreenCommand
+        {
+            get { return lightUpScreenCommand; }
         }
 
 

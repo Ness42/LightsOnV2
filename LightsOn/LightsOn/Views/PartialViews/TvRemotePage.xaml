@@ -4,7 +4,8 @@
              xmlns:prism="http://prismlibrary.com"
              xmlns:control="clr-namespace:LightsOn.Contorls"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="LightsOn.Views.PartialViews.TvRemotePage">
+             x:Class="LightsOn.Views.PartialViews.TvRemotePage"
+             Visual="Material">
     <ContentView Content="{Binding TcpTvControl}"/>
 
 </ContentPage>

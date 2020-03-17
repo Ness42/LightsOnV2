@@ -4,6 +4,7 @@
              xmlns:prism="http://prismlibrary.com"
              xmlns:control="clr-namespace:LightsOn.Contorls"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="LightsOn.Views.PartialViews.TemperaturePage">
+             x:Class="LightsOn.Views.PartialViews.TemperaturePage"
+             Visual="Material">
     <ContentView Content="{Binding FritzTempControl}"></ContentView>
 </ContentPage>

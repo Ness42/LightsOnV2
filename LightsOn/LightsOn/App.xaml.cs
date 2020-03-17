@@ -9,6 +9,7 @@ using LightsOn.ViewModels.PartialViewModel;
 using LightsOn.Settings;
 using LightsOnXamerin.Interfaces;
 using LightsOn.Interfaces;
+using LightsOn.Service;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace LightsOn
@@ -38,9 +39,12 @@ namespace LightsOn
             TCPClient _tcpClient = new TCPClient();
             FritzCommand _fritzCommand = new FritzCommand();
             NanoLeafClient _nanoLeaf = new NanoLeafClient();
+            DimScreenService _dimScreen = new DimScreenService();
+
             containerRegistry.RegisterInstance<ITCPClient>(_tcpClient);
             containerRegistry.RegisterInstance<IFritzCommand>(_fritzCommand);
             containerRegistry.RegisterInstance<INanoLeafClient>(_nanoLeaf);
+            containerRegistry.RegisterInstance<IDimScreenService>(_dimScreen);
 
 
             containerRegistry.RegisterForNavigation<NavigationPage>();

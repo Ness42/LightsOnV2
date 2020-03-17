@@ -4,7 +4,8 @@
              xmlns:prism="http://prismlibrary.com"
              xmlns:local="clr-namespace:LightsOn"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="LightsOn.Views.PartialViews.SettingsPage">
+             x:Class="LightsOn.Views.PartialViews.SettingsPage"
+             Visual="Material">
 
     <StackLayout>
         <ListView ItemsSource="{Binding Settings}">

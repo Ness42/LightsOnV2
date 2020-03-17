@@ -4,10 +4,16 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              xmlns:control="clr-namespace:LightsOn.Contorls"
-             x:Class="LightsOn.Views.PartialViews.HomeComingPage">
-   
+             x:Class="LightsOn.Views.PartialViews.HomeComingPage"
+             Visual="Material">
+
 
     <Grid>
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Command ="{Binding LightUpScreenCommand}">
+                
+            </TapGestureRecognizer>
+        </Grid.GestureRecognizers>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>

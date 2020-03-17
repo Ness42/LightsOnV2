@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:iconize="clr-namespace:Plugin.Iconize;assembly=Plugin.Iconize"
              mc:Ignorable="d"
-             x:Class="LightsOn.Contorls.TcpShutterControl">
+             x:Class="LightsOn.Contorls.TcpShutterControl"
+             Visual="Material">
     <ContentView.Content>
         <Grid x:Name="GridSutterTcp">
             <Grid.RowDefinitions>

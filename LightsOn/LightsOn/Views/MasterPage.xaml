@@ -6,7 +6,8 @@
              Padding="0,40,0,0"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="LightsOn.Views.MasterPage"
-             Title="MasterPage">
+             Title="MasterPage"
+             Visual="Material">
     <StackLayout>
         <ListView x:Name="listView" x:FieldModifier="public">
             <ListView.ItemsSource>

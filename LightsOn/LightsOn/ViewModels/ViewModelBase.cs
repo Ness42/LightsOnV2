@@ -16,6 +16,8 @@ namespace LightsOn.ViewModels
             NavigationService = navigationService;
         }
 
+
+
         public virtual void Initialize(INavigationParameters parameters)
         {
 
@@ -35,5 +37,8 @@ namespace LightsOn.ViewModels
         {
 
         }
+    
+    
+    
     }
 }

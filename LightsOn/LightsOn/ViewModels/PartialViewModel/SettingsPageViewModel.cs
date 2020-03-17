@@ -14,6 +14,9 @@ using System.Windows.Input;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using LightsOn.Settings;
+using Windows.Graphics.Display;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace LightsOn.ViewModels.PartialViewModel
 {
@@ -99,9 +102,10 @@ namespace LightsOn.ViewModels.PartialViewModel
 
             SaveCommand = new Command(() => { SavePreferences(); });
 
-            TestCommand = new Command(() => { TestFunktion(TestState); });
+            TestCommand = new Command(() => { SetBrightnessOverride(); });
 
             ReadPreferences();
+            InitializeBrightnessOverride();
             Settings = new ObservableCollection<SettingsPageItem>();
             Settings.Add(new SettingsPageItem
             {
@@ -143,6 +147,31 @@ namespace LightsOn.ViewModels.PartialViewModel
             }
 
         }
+
+        private BrightnessOverride brightnessOverride = null;
+
+        private void InitializeBrightnessOverride()
+        {
+            brightnessOverride = BrightnessOverride.GetForCurrentView();
+            Debug.WriteLine($"Try to change brightness from {brightnessOverride.BrightnessLevel} to {0.80}");
+
+        }
+        private void SetBrightnessOverride() 
+        { 
+
+            brightnessOverride.SetBrightnessLevel(0.00, DisplayBrightnessOverrideOptions.None);
+
+            brightnessOverride.StartOverride();
+
+            Task.Delay(5000);
+
+            brightnessOverride.SetBrightnessLevel(1, DisplayBrightnessOverrideOptions.None);
+
+            brightnessOverride.StartOverride();
+
+        }
+
+
 
         public ICommand SaveCommand { private set; get; }
         public ICommand TestCommand { private set; get; }

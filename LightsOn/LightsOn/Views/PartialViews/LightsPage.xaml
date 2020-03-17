@@ -4,7 +4,8 @@
              xmlns:prism="http://prismlibrary.com"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="LightsOn.Views.PartialViews.LightsPage"
-             xmlns:control="clr-namespace:LightsOn.Contorls">
+             xmlns:control="clr-namespace:LightsOn.Contorls"
+             Visual="Material">
     <Grid x:Name="LightsStackLayout">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
